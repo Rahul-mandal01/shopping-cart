@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
     const {cart} = useSelector((state) => state);
     return(
-        <div>
+        <div className="">
             <nav className="flex justify-between items-center h-20 max-w-6xl mx-auto ">
                 <NavLink to="/" >
                     <div className="ml-5">
