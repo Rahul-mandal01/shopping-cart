@@ -3,7 +3,7 @@ import Spinner from "../components/Spinner";
 import Product from "../components/Product";
 
 const Home = () => {
-    const API_URL = "https://fakestoreapi.com/products";
+    const API_URL = process.env.REACT_APP_API_URL;
     const [loading, setLoading] = useState(false);
     const [posts, setPosts] = useState([]);
 
@@ -28,6 +28,7 @@ const Home = () => {
 
     useEffect ( () =>{
         fetchProductData();
+        // eslint-disable-next-line
     },[]);
 
 
@@ -44,8 +45,8 @@ const Home = () => {
                     ))
                 }
             </div>) :
-            <div className="flex justify-center items-center" >
-                <p>No Data Found</p>
+            <div className="flex min-h-[90vh] justify-center items-center  " >
+                <p className="bg-red-600  rounded-lg text-white uppercase tracking-wider font-semibold  mt-5 border-2 border-green-600 p-3 px-10">No Data Found</p>
             </div>
         } 
         </div>
